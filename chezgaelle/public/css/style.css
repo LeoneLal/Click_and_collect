@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-family: "Pacifico", cursive;
+    color: #8c1c13;
+    margin: 0;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+}
+
+section {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .logo img {
+    position: absolute;
+    padding-top: 1%;
+    padding-left: 2%;
+    width: 5%;
+}
+
+.links {
+    width: 50%;
+}
+
+.links ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.links ul .link {
+    list-style-type: none;
+    padding-right: 5%;
+    color: #8c1c13;
+    font-family: "Roboto", sans-serif;
+}
+
+.links ul .active {
+    font-weight: bold;
+}
+
+/* Présentation Entreprise */
+.presentation {
+    background-color: #e7d7c1;
+    display: flex;
+    align-items: center;
+}
+
+.presentation .img {
+    width: 40%;
+    height: 400px;
+    /* background-image: url("../images/image.png");
+    background: linear-gradient(
+        270deg,
+        red,
+        rgba(255, 0, 0, 0) 100%,
+        url("../images/image.png")
+    ); */
+
+    background-image: linear-gradient(to right, rgba(245, 246, 252, 0), #e7d7c1),
+        url("../images/image.png");
+
+    background-size: cover;
+    background-position: bottom;
+}
+
+.presentation .chezgaelle {
+    width: 60%;
+    right: 0;
+    background-color: #e7d7c1;
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.presentation .chezgaelle p,
+.chezgaelle h2 {
+    width: 60%;
+    text-align: center;
+}
+
+.presentation .chezgaelle h2 {
+    font-size: 36px;
+}
+
+/* Galerie photos*/
+
+.photos {
+    background-color: #735751;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.galerie h2 {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.galerie .lastPictures {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.galerie .lastPictures .picture {
+    width: 30%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.galerie .lastPictures .picture img {
+    width: 100%;
+    margin: auto;
+}
+
+.galerie .lastPictures .picture legend {
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+
+.galerie button {
+    background-color: white;
+    font-family: "Roboto", sans-serif;
+    color: #8c1c13;
+    font-weight: bold;
+    border: none;
+    height: 45px;
+    width: 10%;
+    margin-bottom: 25px;
+}
+
+.galerie button:focus {
+    outline: none;
+}
+
+/* Galerie articles */
+
+.articles {
+    background-color: #e7d7c1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.articles h2 {
+    color: #8c1c13;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.galerie .lastArticles {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.galerie .lastArticles .article {
+    width: 30%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: white;
+}
+
+.galerie .lastArticles .article img {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.galerie .lastArticles .article .infos {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    margin: 2%;
+}
+
+.galerie .lastArticles .article .infos .details h3,
+.galerie .lastArticles .article .infos .details p {
+    margin: 5px;
+}
+
+.galerie .lastArticles .article .infos .fa-link {
+    color: #8c1c13;
+}
+
+.galerie .lastArticles .article .infos .link {
+    margin: 4%;
+}
+
+.galerie button {
+    background-color: #8c1c13;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    font-weight: bold;
+    border: none;
+    height: 45px;
+    width: 10%;
+    margin-bottom: 25px;
+}
+
+.galerie button:focus {
+    outline: none;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+footer .hours {
+    display: flex;
+    align-items: center;
+}
+
+footer .hours h1 {
+    font-family: "Pacifico", cursive;
+    color: #8c1c13;
+    margin: 0;
+    padding-right: 2%;
+}
+
+footer .coordonees {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
