@@ -59,6 +59,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+        $user = User::where('id', $id)->first();
+        return view('users.edit')->with('user', $user);
     }
 
     /**
@@ -70,6 +72,13 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $user = User::where('id', $id)->first();
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        $user->password = Hash::make($request->get('password'));
+        $user->role = $request->get('role');
+        $user->save();
+        return redirect()->route('users.index');
     }
 
     /**
