@@ -33,9 +33,11 @@
                         </select>
                     </div>
                     <div class="mt-5">
-                        <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 py-1 px-2 rounded" type="submit">
-                            Apply
-                        </button>
+                        <a href="{{ route('product.update',  $product->id) }}">
+                            <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 py-1 px-2 rounded" type="submit">
+                                Apply
+                            </button>
+                        </a>
                         <a href="{{ route('products.index') }}">
                             <button class="border-transparent border-4 text-teal-500 hover:text-teal-800 text-sm py-1 px-2 rounded" type="button">
                                 Cancel

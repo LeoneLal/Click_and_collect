@@ -97,7 +97,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::where('id', $id)->first();
+        $product->name = $request->get('name');
+        $product->price = $request->get('price');
+        $product->stock = $request->get('stock');
+        $product->category_id = $request->get('category_id');
+        $product->save();
+
+        return redirect('/products');
     }
 
     /**
