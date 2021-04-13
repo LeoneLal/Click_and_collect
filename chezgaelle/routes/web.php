@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -39,5 +40,10 @@ Route::get('/product/{id}', [ProductController::class, 'show'])->name('show');
 Route::get('/products/create', [ProductController::class, 'create'])->name('create');
 Route::post('/products/create', [ProductController::class, 'store'])->name('store');;
 Route::get('/product/{id}/update', [ProductController::class, 'update'])->name('update');
+
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::get('/user/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
+Route::post('/user/{id}/edit', [UserController::class, 'update'])->name('user.update');
+Route::get('/user/{id}/destroy', [UserController::class, 'destroy'])->name('user.destroy');
 
 require __DIR__.'/auth.php';
