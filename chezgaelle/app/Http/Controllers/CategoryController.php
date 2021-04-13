@@ -13,8 +13,9 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('categories.index');
+    {   
+        $categories = Category::all();
+        return view('categories.index')->with('categories', $categories);
     }
 
     /**
@@ -24,6 +25,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
+        
         return view('categories.create');
     }
 
@@ -42,19 +44,8 @@ class CategoryController extends Controller
         $category = new Category;
         $category->name = $request->name;
         $category->save();
-        
-        return redirect('/categories');
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return redirect('/categories');
     }
 
     /**
