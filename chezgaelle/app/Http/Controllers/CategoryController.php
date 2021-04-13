@@ -35,6 +35,15 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+        ]);
+
+        $category = new Category;
+        $category->name = $request->name;
+        $category->save();
+        
+        return redirect('/categories');
     }
 
     /**
