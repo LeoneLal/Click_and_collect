@@ -26,9 +26,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/categories', [CategoryController::class, 'index'])->name('index');
-Route::get('/categories/create', [CategoryController::class, 'create'])->name('create');
-Route::post('/categories/create', [CategoryController::class, 'store'])->name('store');;
-Route::get('/category/{id}/update', [CategoryController::class, 'update'])->name('update');
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+Route::get('/categories/create', [CategoryController::class, 'create'])->name('category.create');
+Route::post('/categories/create', [CategoryController::class, 'store'])->name('category.store');;
+Route::get('/category/{id}/edit', [CategoryController::class, 'edit'])->name('category.edit');
+Route::post('/category/{id}/edit', [CategoryController::class, 'update'])->name('category.update');
+Route::get('/category/{id}/destroy', [CategoryController::class, 'destroy'])->name('category.destroy');
 
 require __DIR__.'/auth.php';
