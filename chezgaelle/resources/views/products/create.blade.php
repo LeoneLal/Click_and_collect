@@ -13,7 +13,7 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ url('products/create') }}">
+        <form method="POST" action="{{ route('product.create') }}">
             @csrf
 
             <!-- Name -->
