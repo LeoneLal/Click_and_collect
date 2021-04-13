@@ -32,6 +32,11 @@
                     @else
                         <p class="text-red-500">Sold out</p>
                     @endif
+                    <a href="{{ route('product.edit',  $product->id) }}">
+                        <button class="bg-transparent hover:bg-yellow-500 text-yellow-500 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">
+                            Edit
+                        </button>
+                    </a>
                 </div>
                 @endforeach
             </div>

@@ -70,7 +70,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        // $categories = Category::where('id', $categoryId)->with('products')->first();
     }
 
     /**
@@ -81,7 +81,11 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::all();
+        $product = Product::where('id', $id)->with('category')->first();
+        return view('products.edit')
+        ->with('product', $product)
+        ->with('categories', $categories);
     }
 
     /**
