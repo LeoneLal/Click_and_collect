@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 
 
 /*
@@ -32,5 +33,11 @@ Route::post('/categories/create', [CategoryController::class, 'store'])->name('c
 Route::get('/category/{id}/edit', [CategoryController::class, 'edit'])->name('category.edit');
 Route::post('/category/{id}/edit', [CategoryController::class, 'update'])->name('category.update');
 Route::get('/category/{id}/destroy', [CategoryController::class, 'destroy'])->name('category.destroy');
+
+Route::get('/products', [ProductController::class, 'index'])->name('index');
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('show');
+Route::get('/products/create', [ProductController::class, 'create'])->name('create');
+Route::post('/products/create', [ProductController::class, 'store'])->name('store');;
+Route::get('/product/{id}/update', [ProductController::class, 'update'])->name('update');
 
 require __DIR__.'/auth.php';
