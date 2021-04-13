@@ -21,6 +21,9 @@
                     <a href="{{ url('/articles') }}"><button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                         Articles
                     </button></a>
+                    <a href="{{ url('/users') }}"><button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                        Utilisateurs
+                    </button></a>
                 </div>
             </div>
         </div>
