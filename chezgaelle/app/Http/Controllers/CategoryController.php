@@ -56,7 +56,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::where('id', $id)->first();
+        return view('categories.edit')->with('category', $category);
+
     }
 
     /**
@@ -68,7 +70,11 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::where('id', $id)->first();
+        $category->name = $request->get('name');
+        $category->save();
+        return redirect()->route('categories.index');
+
     }
 
     /**
@@ -79,6 +85,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::where('id', $id)->first();
+        $category->delete();
+        return redirect()->route('categories.index');
     }
 }
