@@ -27,7 +27,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/categories', [CategoryController::class, 'index'])->name('index');
-Route::get('/category/{id}', [CategoryController::class, 'show'])->name('show');
 Route::get('/categories/create', [CategoryController::class, 'create'])->name('create');
 Route::post('/categories/create', [CategoryController::class, 'store'])->name('store');;
 Route::get('/category/{id}/update', [CategoryController::class, 'update'])->name('update');
