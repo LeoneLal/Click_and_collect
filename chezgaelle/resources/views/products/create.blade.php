@@ -13,7 +13,7 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('password.confirm') }}">
+        <form method="POST" action="{{ route('product.create') }}">
             @csrf
 
             <!-- Name -->
@@ -48,8 +48,11 @@
             <div>
                 <x-label for="category" :value="__('Category')" />
 
-                <select id="category_id" class="block mt-1 w-full" name="category" required >
-                    <option value="category.name">{{ $category_id }}</option>
+                <select id="category" class="block mt-1 w-full" name="category_id" required >
+                    <option></option>
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
                 </select>
             </div>
 
