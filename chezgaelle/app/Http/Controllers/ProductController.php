@@ -69,8 +69,9 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        // $categories = Category::where('id', $categoryId)->with('products')->first();
+    { 
+        $product = Product::find($id);
+        return view('products.show')->with('product', $product);
     }
 
     /**

@@ -24,9 +24,11 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 @foreach($products as $product)
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <img href="" />
-                    <p>{{ $product->name }}</p>
-                    <p>{{ $product->price }} €</p>
+                    <a href="{{ route('product.show',  $product->id) }}" />
+                        <img src="" />
+                        <p>{{ $product->name }}</p>
+                        <p>{{ $product->price }} €</p>
+                    </a>
                     @if($product->stock > 0)
                         <p class="text-green-400">In stock, only {{ $product->stock }} left</p>
                     @else
