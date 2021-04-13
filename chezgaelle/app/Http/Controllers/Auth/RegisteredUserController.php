@@ -44,7 +44,7 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'api_token' => Str::random(80),
-            'role' => 0,
+            'role' => "Client",
         ]));
 
         event(new Registered($user));
