@@ -61,8 +61,9 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        // $categories = Category::where('id', $categoryId)->with('products')->first();
+    { 
+        $product = Product::find($id);
+        return view('products.show')->with('product', $product);
     }
 
     /**
@@ -89,7 +90,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::where('id', $id)->first();
+        $product->name = $request->get('name');
+        $product->price = $request->get('price');
+        $product->stock = $request->get('stock');
+        $product->category_id = $request->get('category_id');
+        $product->save();
+
+        return redirect('/products');
     }
 
     /**
@@ -100,6 +108,8 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::where('id', $id)->first();
+        $product->delete();
+        return redirect('/products');
     }
 }
