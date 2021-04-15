@@ -38,28 +38,20 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate(['picture_slug' => 'required|mimes:png,jpg,svg|max:2048']);
-        
+        $request->validate(['file' => 'required|mimes:png,jpg,svg|max:2048']);
+
+        $name = $request->file('file')->getClientOriginalName();
+        $request->file->move(public_path('images'), $name);
+
         $product = new Product;
         $product->name = $request->name;
-        $product->picture_slug = $request->picture_slug;
-
-        // $path = $request->picture_slug->storeAs('img', 'filename.jpg', 'products_img');
-        
-        // if(!Storage::disk('products_img')->put($path, $file_content)) {
-        //     return false;
-        // }
-
-        // Don't forget to add 'url' => url('uploads'), too, otherwise 
-        // Storage::disk('public_uploads')->url('filename')
-        // will return /storage/filename instead of a fully qualified URL.
-
+        $product->picture_slug =  $name;
         $product->price = $request->price;
         $product->stock = $request->stock;
         $product->category_id = $request->category_id;
         $product->save();
 
-        return redirect('/products');
+        return back();
     }
 
     /**
