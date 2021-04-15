@@ -13,7 +13,7 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('product.create') }}">
+        <form method="POST" enctype="multipart/form-data" action="{{ route('product.create') }}">
             @csrf
 
             <!-- Name -->
@@ -25,9 +25,11 @@
 
             <!-- Picture slug -->
             <div>
-                <x-label for="picture_slug" :value="__('Picture')" />
-
-                <x-input id="picture_slug" class="block mt-1 w-full" type="file" name="picture_slug" required />
+                <x-label for="file" :value="__('Picture')" />
+                <input type="file" name="file" placeholder="Choose file" id="file">
+                @error('file')
+                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                @enderror
             </div>
 
             <!-- Price -->
