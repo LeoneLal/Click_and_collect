@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\GalleryController;
 
 
 /*
@@ -50,5 +51,10 @@ Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::get('/user/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
 Route::post('/user/{id}/edit', [UserController::class, 'update'])->name('user.update');
 Route::get('/user/{id}/destroy', [UserController::class, 'destroy'])->name('user.destroy');
+
+// Routes for pictures gallery
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
+Route::get('/gallery/create', [GalleryController::class, 'create'])->name('gallery.create');
+Route::post('/gallery/create', [GalleryController::class, 'store'])->name('gallery.create');
 
 require __DIR__.'/auth.php';
