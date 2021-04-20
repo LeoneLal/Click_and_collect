@@ -29,7 +29,9 @@
                         <p>{{ $product->name }}</p>
                         <p>{{ $product->price }} €</p>
                     </a>
-                    @if($product->stock > 0)
+                    @if($product->stock > 3)
+                        <p class="text-green-400">{{ $product->stock }} in stock</p>
+                    @elseif($product->stock > 0  && $product-> stock <= 3)
                         <p class="text-green-400">In stock, only {{ $product->stock }} left</p>
                     @else
                         <p class="text-red-500">Sold out</p>
