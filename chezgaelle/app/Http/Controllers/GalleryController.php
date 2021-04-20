@@ -14,6 +14,8 @@ class GalleryController extends Controller
      */
     public function index()
     {
+        $gallery = Gallery::all();
+        return view('gallery.index')->with('gallery', $gallery);
     }
 
     /**
