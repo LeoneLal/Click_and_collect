@@ -25,6 +25,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
+        return view('gallery.create');
     }
 
     /**
@@ -35,6 +36,17 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
+        // $request->validate(['file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048']);   
+
+        $name = $request->file('file')->getClientOriginalName();
+        $request->file->move(public_path('images/gallery'), $name);
+
+        $picture = new Gallery;
+        $picture->picture_slug =  $name;
+        $picture->description = $request->description;
+        $picture->save();
+
+        return back();
     }
 
     /**
