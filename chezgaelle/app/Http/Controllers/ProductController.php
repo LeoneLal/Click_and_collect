@@ -16,7 +16,10 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('products.index')->with('products', $products);
+        if( \Auth::user()->role == 'Administrateur')
+            return view('products.index')->with('products', $products);
+        else
+            return redirect()->route('index');
     }
 
     /**
@@ -27,7 +30,10 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('products.create')->with('categories', $categories);
+        if( \Auth::user()->role == 'Administrateur')
+            return view('products.create')->with('categories', $categories);
+        else
+            return redirect()->route('index');
     }
 
     /**
@@ -76,9 +82,12 @@ class ProductController extends Controller
     {
         $categories = Category::all();
         $product = Product::where('id', $id)->with('category')->first();
-        return view('products.edit')
-        ->with('product', $product)
-        ->with('categories', $categories);
+        if( \Auth::user()->role == 'Administrateur')
+            return view('products.edit')
+            ->with('product', $product)
+            ->with('categories', $categories);
+        else
+            return redirect()->route('index');
     }
 
     /**

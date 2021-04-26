@@ -15,7 +15,10 @@ class GalleryController extends Controller
     public function index()
     {
         $gallery = Gallery::all();
-        return view('gallery.index')->with('gallery', $gallery);
+        if( \Auth::user()->role == 'Administrateur')
+            return view('gallery.index')->with('gallery', $gallery);
+        else
+            return redirect()->route('index');
     }
 
     /**
@@ -25,7 +28,10 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        return view('gallery.create');
+        if( \Auth::user()->role == 'Administrateur')
+            return view('gallery.create');
+        else
+            return redirect()->route('index');
     }
 
     /**
@@ -42,7 +48,7 @@ class GalleryController extends Controller
         $request->file->move(public_path('images/gallery'), $name);
 
         $picture = new Gallery;
-        $picture->picture_slug =  $name;
+        $picture->picture_slug = $name;
         $picture->description = $request->description;
         $picture->save();
 

@@ -16,7 +16,10 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('users.index')->with('users', $users);
+        if( \Auth::user()->role == 'Administrateur')
+            return view('users.index')->with('users', $users);
+        else
+            return redirect()->route('index');
     }
 
     /**
@@ -60,7 +63,10 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::where('id', $id)->first();
-        return view('users.edit')->with('user', $user);
+        if( \Auth::user()->role == 'Administrateur')
+            return view('users.edit')->with('user', $user);
+        else
+            return redirect()->route('index');
     }
 
     /**
