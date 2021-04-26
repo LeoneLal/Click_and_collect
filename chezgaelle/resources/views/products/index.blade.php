@@ -29,11 +29,12 @@
                     </a>
                     <div class="products-detail">
                         <p>{{ $product->name }}</p>
+                        <p class="text-xs">{{ $product->category->name }}</p>
                         <p>{{ $product->price }} €</p>
                         @if($product->stock > 3)
                             <p class="text-green-400">{{ $product->stock }} in stock</p>
                         @elseif($product->stock > 0  && $product-> stock <= 3)
-                            <p class="text-green-400">In stock, only {{ $product->stock }} left</p>
+                            <p class="text-yellow-500">In stock, only {{ $product->stock }} left</p>
                         @else
                             <p class="text-red-500">Sold out</p>
                         @endif
