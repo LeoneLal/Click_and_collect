@@ -249,3 +249,28 @@ footer .coordonees {
     flex-direction: column;
     align-items: center;
 }
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.gallery .picture {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    align-items: center;
+}
+
+.gallery .picture button {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery .picture img {
+    width: 200px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
