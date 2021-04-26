@@ -57,6 +57,22 @@ class ArticleController extends Controller
 
         return redirect()->route('articles.index');
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $article = Article::find($id);
+        if( \Auth::user()->role == 'Administrateur')
+            return view('articles.show')->with('article', $article);
+        else
+            return redirect()->route('index');
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

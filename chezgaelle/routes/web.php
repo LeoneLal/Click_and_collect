@@ -64,6 +64,7 @@ Route::get('/gallery/{id}/destroy', [GalleryController::class, 'destroy'])->name
 
 // Routes for articles
 Route::get('/admin/articles', [ArticleController::class, 'index'])->name('articles.index');
+Route::get('/article/{id}', [ArticleController::class, 'show'])->name('article.show');
 Route::get('/articles/create', [ArticleController::class, 'create'])->name('article.create');
 Route::post('/articles/create', [ArticleController::class, 'store'])->name('article.store');
 Route::get('/article/{id}/edit', [ArticleController::class, 'edit'])->name('article.edit');
