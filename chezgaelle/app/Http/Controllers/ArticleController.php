@@ -35,6 +35,20 @@ class ArticleController extends Controller
             return redirect()->route('index');
     }
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $article = Article::find($id);
+        if( \Auth::user()->role == 'Administrateur')
+            return view('articles.edit')->with('article', $article);
+        else
+            return redirect()->route('index');
+    }
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
