@@ -19,27 +19,23 @@
 
                     <!-- Email Address -->
                     <div class="mt-4">
-                        <x-label for="email" :value="__('Email')" />
+                        <x-label for="email" :value="__('Email (non editable) ')" />
 
-                        <x-input id="email" class="block mt-1 w-full" type="email" name="email" value="{{ $user->email }}" required />
+                        <x-input readonly id="email" class="block mt-1 w-full" type="email" name="email" value="{{ $user->email }}" required />
                     </div>
 
-                    <!-- Confirm Password -->
-                    <div class="mt-4">
-                        <x-label for="new_password" :value="__('New Password')" />
-
-                        <x-input id="new_password" class="block mt-1 w-full"
-                                        type="password"
-                                        name="new_password"/>
-                    </div>
+            
 
                     <div class="mt-4">
                         <x-label for="role" :value="__('Rôle')" />
 
                         <select name="role">
-                            <option>-- Choisir la valeur --</option>
-                            <option value="Administrateur">Administrateur</option>
+                            <option>{{ $user->role }}</option>
+                            @if( $user->role === 'Administrateur')
                             <option value="Client">Client</option>
+                            @elseif($user->role === 'Client')
+                            <option value="Administrateur">Administrateur</option>
+                            @endif
                         </select>
                     </div>
 
