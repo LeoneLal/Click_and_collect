@@ -71,6 +71,24 @@ class ArticleController extends Controller
         else
             return redirect()->route('index');
     }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $article = Article::where('id', $id)->first();
+        $article->title = $request->get('title');
+        $article->body = $request->get('body');
+        $article->save();
+
+        return redirect('/admin/articles');
+    }
+
     /**
      * Remove the specified resource from storage.
      *
