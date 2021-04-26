@@ -24,9 +24,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 @foreach($products as $product)
                 <div class="p-6 bg-white border-b border-gray-200 flex">
-                    <a href="{{ route('product.show',  $product->id) }}" />
-                        <img class="products-list-img mr-9" src="{{ URL::to('/') }}/images/products/{{ $product->picture_slug }}">
-                    </a>
+                    <img class="products-list-img mr-9" src="{{ URL::to('/') }}/images/products/{{ $product->picture_slug }}">
                     <div class="products-detail">
                         <p>{{ $product->name }}</p>
                         <p class="text-xs">{{ $product->category->name }}</p>
