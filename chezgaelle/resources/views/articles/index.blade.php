@@ -18,6 +18,7 @@
             </div>
         </div>
     </div>
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -26,6 +27,11 @@
                     <a href="{{ route('article.show',  $article->id) }}" />
                         <!-- <img src="{{ URL::to('/') }}/images/articles/{{ $article->picture_path }}"> -->
                         <p>{{ $article->title }}</p>
+                    </a>
+                    <a href="{{ route('article.edit',  $article->id) }}">
+                        <button class="bg-transparent hover:bg-yellow-500 text-yellow-500 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">
+                            Edit
+                        </button>
                     </a>
                     <a href="{{ route('article.destroy',  $article->id) }}">
                         <button class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
