@@ -41,7 +41,7 @@ class ProductController extends Controller
         $request->validate(['file' => 'required|mimes:png,jpg,svg|max:2048']);
 
         $name = $request->file('file')->getClientOriginalName();
-        $request->file->move(public_path('images'), $name);
+        $request->file->move(public_path('images/products'), $name);
 
         $product = new Product;
         $product->name = $request->name;
