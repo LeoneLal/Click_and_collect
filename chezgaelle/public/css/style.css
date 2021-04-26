@@ -274,3 +274,9 @@ footer .coordonees {
     object-fit: cover;
     object-position: 50% 50%;
 }
+
+/* Gestion utilisateurs */
+
+.justify-evenly .py-12 {
+    width: -webkit-fill-available;
+}
