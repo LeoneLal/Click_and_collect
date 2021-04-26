@@ -20,6 +20,20 @@ class ArticleController extends Controller
         else
             return redirect()->route('index');
     }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $articles = Article::all();
+        if( \Auth::user()->role == 'Administrateur')
+            return view('articles.create')->with('articles', $articles);
+        else
+            return redirect()->route('index');
+    }
     /**
      * Remove the specified resource from storage.
      *
