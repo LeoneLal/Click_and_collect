@@ -150,10 +150,6 @@ header .logo img {
     margin-bottom: 25px;
 }
 
-.galerie button:focus {
-    outline: none;
-}
-
 /* Galerie articles */
 
 .articles {
@@ -279,4 +275,13 @@ footer .coordonees {
 
 .justify-evenly .py-12 {
     width: -webkit-fill-available;
+}
+
+/* BO Products */
+.products-list-img {
+    width: 150px;
+}
+
+.products-detail p {
+    padding-bottom: 10px;
 }
