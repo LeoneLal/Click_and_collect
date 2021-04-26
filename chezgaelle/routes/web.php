@@ -26,7 +26,10 @@ Route::get('/', function () {
 Route::get('/',[HomeController::class, 'index'])->name('index');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    if( \Auth::user()->role == 'Administrateur')
+        return view('dashboard');
+    else
+        return redirect()->route('index');
 })->middleware(['auth'])->name('dashboard');
 
 // Routes for product categories

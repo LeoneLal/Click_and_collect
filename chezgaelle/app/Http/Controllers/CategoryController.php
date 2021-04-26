@@ -15,7 +15,10 @@ class CategoryController extends Controller
     public function index()
     {   
         $categories = Category::all();
-        return view('categories.index')->with('categories', $categories);
+        if( \Auth::user()->role == 'Administrateur')
+            return view('categories.index')->with('categories', $categories);
+        else
+            return redirect()->route('index');
     }
 
     /**
@@ -25,8 +28,10 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        
-        return view('categories.create');
+        if( \Auth::user()->role == 'Administrateur')
+            return view('categories.create');
+        else
+            return redirect()->route('index');
     }
 
     /**
@@ -57,8 +62,10 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::where('id', $id)->first();
-        return view('categories.edit')->with('category', $category);
-
+        if( \Auth::user()->role == 'Administrateur')
+            return view('categories.edit')->with('category', $category);
+        else
+            return redirect()->route('index');
     }
 
     /**
