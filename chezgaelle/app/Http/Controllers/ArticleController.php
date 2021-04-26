@@ -1,3 +1,25 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Article;
+
+class ArticleController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $articles = Article::all();
+        if( \Auth::user()->role == 'Administrateur')
+            return view('articles.index')->with('articles', $articles);
+        else
+            return redirect()->route('index');
+    }
     /**
      * Remove the specified resource from storage.
      *
