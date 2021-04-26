@@ -91,6 +91,8 @@ class GalleryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $picture = Gallery::where('id', $id)->first();
+        $picture->delete();
+        return redirect('/gallery');
     }
 }
