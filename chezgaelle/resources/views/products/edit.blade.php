@@ -21,7 +21,7 @@
                     </div>
                     <div class="items-center border-b border-teal-500 py-2">
                         <label for="stock">Stock</label>
-                        <input name="stock" id="stock" type="number" value="{{$product->stock}}" class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" >
+                        <input name="stock" id="stock" type="number" step="0.01"  value="{{$product->stock}}" class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" >
                     </div>
                     <div class="items-center border-teal-500 py-2">
                         <label for="category">Category</label>

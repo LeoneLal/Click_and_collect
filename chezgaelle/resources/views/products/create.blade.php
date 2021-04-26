@@ -36,7 +36,7 @@
             <div>
                 <x-label for="price" :value="__('Price')" />
 
-                <x-input id="price" class="block mt-1 w-full" type="number" name="price" required />
+                <x-input id="price" class="block mt-1 w-full" type="number" step="0.01" name="price" required />
             </div>
 
             <!-- Stock -->
