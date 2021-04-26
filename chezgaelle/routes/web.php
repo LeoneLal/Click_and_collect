@@ -62,4 +62,12 @@ Route::get('/gallery/create', [GalleryController::class, 'create'])->name('galle
 Route::post('/gallery/create', [GalleryController::class, 'store'])->name('gallery.create');
 Route::get('/gallery/{id}/destroy', [GalleryController::class, 'destroy'])->name('gallery.destroy');
 
+// Routes for articles
+Route::get('/admin/articles', [ArticleController::class, 'index'])->name('articles.index');
+Route::get('/articles/create', [ArticleController::class, 'create'])->name('article.create');
+Route::post('/articles/create', [ArticleController::class, 'store'])->name('article.store');
+Route::get('/article/{id}/edit', [ArticleController::class, 'edit'])->name('article.edit');
+Route::post('/article/{id}/edit', [ArticleController::class, 'update'])->name('article.update');
+Route::get('/article/{id}/destroy', [ArticleController::class, 'destroy'])->name('article.destroy');
+
 require __DIR__.'/auth.php';
