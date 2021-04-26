@@ -34,6 +34,29 @@ class ArticleController extends Controller
         else
             return redirect()->route('index');
     }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $request->validate(['file' => 'required|mimes:png,jpg,svg|max:2048']);
+        
+        $name = $request->file('file')->getClientOriginalName();
+        $request->file->move(public_path('images/articles'), $name);
+
+        $article = new Article;
+        $article->title = $request->title;
+        $article->body = $request->body;
+        $article->picture_path = $name;
+        $article->author = $request->author;
+        $article->save();
+
+        return redirect()->route('articles.index');
+    }
     /**
      * Show the form for editing the specified resource.
      *
