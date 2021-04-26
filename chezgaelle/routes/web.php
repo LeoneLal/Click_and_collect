@@ -53,8 +53,10 @@ Route::post('/user/{id}/edit', [UserController::class, 'update'])->name('user.up
 Route::get('/user/{id}/destroy', [UserController::class, 'destroy'])->name('user.destroy');
 
 // Routes for pictures gallery
-Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
+Route::get('/admin/gallery', [GalleryController::class, 'index'])->name('gallery.index');
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.pictures');
 Route::get('/gallery/create', [GalleryController::class, 'create'])->name('gallery.create');
 Route::post('/gallery/create', [GalleryController::class, 'store'])->name('gallery.create');
+Route::get('/gallery/{id}/destroy', [GalleryController::class, 'destroy'])->name('gallery.destroy');
 
 require __DIR__.'/auth.php';
