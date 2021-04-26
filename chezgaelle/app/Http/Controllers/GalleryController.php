@@ -93,6 +93,6 @@ class GalleryController extends Controller
     {
         $picture = Gallery::where('id', $id)->first();
         $picture->delete();
-        return redirect('/gallery');
+        return redirect('/admin/gallery');
     }
 }

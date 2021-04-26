@@ -45,7 +45,7 @@ class CategoryController extends Controller
         $category->name = $request->name;
         $category->save();
 
-        return redirect('/categories');
+        return redirect()->route('categories.index');
     }
 
     /**

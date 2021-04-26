@@ -97,7 +97,7 @@ class ProductController extends Controller
         $product->category_id = $request->get('category_id');
         $product->save();
 
-        return redirect('/products');
+        return redirect('/admin/products');
     }
 
     /**
@@ -110,6 +110,6 @@ class ProductController extends Controller
     {
         $product = Product::where('id', $id)->first();
         $product->delete();
-        return redirect('/products');
+        return redirect('/admin/products');
     }
 }

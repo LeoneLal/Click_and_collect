@@ -18,7 +18,6 @@ class HomeController extends Controller
         $last_pictures = Gallery::orderBy('id', 'DESC')->limit(3)->get();
         $description = Home::where( 'key', 'description')->first();
         return view('index',compact('last_pictures', 'description'));
-        
     }
 
     /**
