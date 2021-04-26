@@ -36,18 +36,12 @@
     <section class="galerie photos">
         <h2>Dernières photos</h2>
         <div class="lastPictures">
+            @foreach($last_pictures as $picture)
             <div class="picture">
-                    <img src="{{ asset('images/jeux.jpg') }}" alt="Saint Valentin">
-                    <legend>Fevrier 2021</legend>
+                    <img src="{{ URL::to('/') }}/images/gallery/{{ $picture->picture_slug }}" alt="{{$picture->description}}">
+                    <legend>{{ date('d-m-Y', strtotime($picture->updated_at)) }}</legend>
             </div>
-            <div class="picture">
-                    <img src="{{ asset('images/jeux.jpg') }}" alt="Saint Valentin">
-                    <legend>Fevrier 2021</legend>
-            </div>
-            <div class="picture">
-                    <img src="{{ asset('images/jeux.jpg') }}" alt="Saint Valentin">
-                    <legend>Fevrier 2021</legend>
-            </div>
+            @endforeach
         </div>
         <button>VOIR PLUS</button>
     </section>
