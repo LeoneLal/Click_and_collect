@@ -1,0 +1,13 @@
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $article = Article::where('id', $id)->first();
+        $article->delete();
+        return redirect('/admin/articles');
+    }
+}
