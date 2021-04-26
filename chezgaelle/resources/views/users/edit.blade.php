@@ -35,12 +35,15 @@
                             <option value="Client">Client</option>
                             @elseif($user->role === 'Client')
                             <option value="Administrateur">Administrateur</option>
+                            @else
+                            <option value="Administrateur">Administrateur</option>
+                            <option value="Client">Client</option>
                             @endif
                         </select>
                     </div>
 
                     <div class="flex items-center justify-end mt-4">
-                        <button type="submit">Modifier</button>
+                        <button type="submit">Enregistrer</button>
                     </div>
                 </form>
             </div>
