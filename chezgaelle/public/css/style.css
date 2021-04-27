@@ -277,11 +277,21 @@ footer .coordonees {
     width: -webkit-fill-available;
 }
 
-/* BO Products */
-.products-list-img {
+/* BO list */
+.img-list {
     width: 150px;
 }
 
-.products-detail p {
+.details-list p, .text-xs {
     padding-bottom: 10px;
+}
+
+/* Show Article */
+
+.show-details p:last-child, .show-details p:first-child {
+    padding-top: 20px;
+}
+
+img.m-auto {
+    height: 500px;
 }
