@@ -226,7 +226,11 @@ main {
     font-family: "Roboto", sans-serif;
     display: flex;
     justify-content: space-between;
-    margin: 2%;
+    padding: 5px;
+}
+
+.galerie .lastArticles .article .infos .details {
+    padding: 10px;
 }
 
 .galerie .lastArticles .article .infos .details h3,
@@ -239,7 +243,7 @@ main {
 }
 
 p.link {
-    padding-right: 4%;
+    padding: 10px;
 }
 
 .galerie button {
