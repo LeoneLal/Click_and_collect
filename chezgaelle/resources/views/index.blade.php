@@ -52,6 +52,7 @@
         <div class="lastArticles">
             @foreach($last_articles as $article)
             <div class="article">
+                <a href="{{ route('article.details',  $article->id) }}">
                 <img src="{{ URL::to('/') }}/images/articles/{{ $article->picture_path }}" alt="{{$article->title}}">
                 <div class="infos">
                     <div class="details">
@@ -60,10 +61,10 @@
                     </div>
                     <p class="link"><i class="fas fa-link"></i></p>
                 </div>
+                </a>
             </div>
             @endforeach
         </div>
-        <button>VOIR PLUS</button>
         <button><a href="{{ route('articles.news') }}">VOIR PLUS</a></button>
     </section>
     </main>   

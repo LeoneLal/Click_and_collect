@@ -120,8 +120,13 @@ class ArticleController extends Controller
 
     public function news()
     {
-        $articles = Article::all();
         $articles = Article::orderBy('id', 'DESC')->get();
         return view('articles.news')->with('articles', $articles);
+    }
+
+    public function details($id)
+    {
+        $article = Article::find($id);
+        return view('articles.details')->with('article', $article);
     }
 }
