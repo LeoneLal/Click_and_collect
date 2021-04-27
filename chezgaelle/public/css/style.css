@@ -244,7 +244,37 @@ footer .coordonees {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
+
+footer .social {
+    padding-top: 30px;
+}
+
+footer .coordonees p {
+    margin: 0;
+    padding: 10px;
+}
+
+footer .fas, footer .fab {
+    color: #8c1c13;
+    padding-right: 10px;
+}
+
+i.fa-facebook {
+    color: #1877F2;
+}
+
+.hourByDay p {
+    margin: 0;
+    width: max-content;
+}
+
+.hourByDay {
+    padding: 35px;
+}
+
+/* Gallery */
 
 .gallery {
     display: flex;

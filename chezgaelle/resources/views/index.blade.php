@@ -101,6 +101,11 @@
         <div class="coordonees">
             <p><i class="fas fa-map-marker-alt"></i> 12 place de l'église 44520 Moisdon la rivière</p>
             <p><i class="fas fa-phone-alt"></i> 02 40 07 61 74</p>
+            <p><i class="fas fa-map-marker-alt"></i>12 Place de l'Église, 44520 Moisdon-la-Rivière</p>
+            <p><i class="fas fa-phone-alt"></i>02 40 07 61 74</p>
+        </div>
+        <div class="social">
+            <i class="fab fa-facebook"></i>
         </div>
     </footer> 
     <script src="https://kit.fontawesome.com/b927a11103.js" crossorigin="anonymous"></script>
