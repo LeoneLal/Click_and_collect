@@ -22,13 +22,17 @@
         </div>
     </header>
     <main>
-        @foreach($pictures as $picture)
-        <div class="">
-            <img src="{{ URL::to('/') }}/images/gallery/{{ $picture->picture_slug }}">
-            <p>{{ date('d/m/Y', strtotime($picture->updated_at)) }}</p>
-            <p>{{ $picture->description }}</p>
+        <div class="pictures">
+            @foreach($pictures as $picture)
+            <div class="picture">
+                <img src="{{ URL::to('/') }}/images/gallery/{{ $picture->picture_slug }}">
+                <div class="">
+                    <p>{{ $picture->description }}</p>
+                    <p class="small-text">{{ date('d/m/Y', strtotime($picture->updated_at)) }}</p>
+                </div>
+            </div>
+            @endforeach
         </div>
-        @endforeach
     </main>   
     <footer>
         <div class="hours">

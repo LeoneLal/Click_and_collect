@@ -62,7 +62,6 @@ header .logo img {
 
 /* Présentation Entreprise */
 .presentation {
-    background-color: #e7d7c1;
     display: flex;
     align-items: center;
 }
@@ -88,7 +87,6 @@ header .logo img {
 .presentation .chezgaelle {
     width: 60%;
     right: 0;
-    background-color: #e7d7c1;
     position: absolute;
     z-index: 3;
     display: flex;
@@ -106,7 +104,7 @@ header .logo img {
     font-size: 36px;
 }
 
-/* Galerie photos*/
+/* Homepage photos*/
 
 .photos {
     background-color: #735751;
@@ -122,19 +120,19 @@ header .logo img {
     margin-top: 2%;
 }
 
-.galerie .lastPictures {
+.galerie .lastPictures, .pictures {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-.galerie .lastPictures .picture {
+.picture {
     width: 30%;
     padding-top: 2%;
     padding-bottom: 2%;
 }
 
-.galerie .lastPictures .picture img {
+.picture img {
     width: 100%;
     margin: auto;
 }
@@ -160,10 +158,39 @@ header .logo img {
     color: inherit;
 }
 
-/* Galerie articles */
+/* Galerie photos */
+
+main {
+    background-color: #e7d7c1;
+}
+
+.pictures {
+    padding: 50px;
+}
+
+.pictures .picture {
+    background-color: white;
+    padding: 0;
+    margin-bottom: 50px;
+}
+
+.pictures .picture p {
+    margin: 0;
+    padding: 5px;
+}
+
+.pictures .picture div {
+    padding: 10px;
+}
+
+.small-text {
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+
+/* Homepage articles */
 
 .articles {
-    background-color: #e7d7c1;
     display: flex;
     flex-direction: column;
     align-items: center;
