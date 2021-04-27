@@ -117,4 +117,10 @@ class ArticleController extends Controller
         $article->delete();
         return redirect('/admin/articles');
     }
+
+    public function news()
+    {
+        $articles = Article::all();
+        return view('articles.news')->with('articles', $articles);
+    }
 }

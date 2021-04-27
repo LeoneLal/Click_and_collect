@@ -10,15 +10,15 @@
 <body>
     <header>
         <div class="logo">
-        <a href="{{ route('dashboard') }}">
-            <img src="{{asset('images/LogoFondClair.png')}}" alt="logo">
+            <a href="{{ route('dashboard') }}">
+                <img src="{{asset('images/LogoFondClair.png')}}" alt="logo">
             </a>
         </div>
         <div class="links">
             <ul>
             <li class="link active"><a href="{{ route('index') }}">Accueil</a></li>
             <li class="link"><a href="{{ route('gallery.pictures') }}">Galerie</a></li>
-            <li class="link">Actus</li>
+            <li class="link"><a href="{{ route('articles.news') }}">Actus</a></li>
             <li class="link">Infos complémentaires</li>
             </ul>
         </div>
@@ -52,14 +52,14 @@
         <div class="lastArticles">
             @foreach($last_articles as $article)
             <div class="article">
-                    <img src="{{ URL::to('/') }}/images/articles/{{ $article->picture_path }}" alt="{{$article->title}}">
-                    <div class="infos">
-                        <div class="details">
-                            <h3 class="title">{{ $article->title }}</h3>
-                            <p class="small-text">{{ date('d/m/Y', strtotime($article->updated_at)) }}</p>
-                        </div>
-                        <p class="link"><i class="fas fa-link"></i></p>
+                <img src="{{ URL::to('/') }}/images/articles/{{ $article->picture_path }}" alt="{{$article->title}}">
+                <div class="infos">
+                    <div class="details">
+                        <h3 class="title">{{ $article->title }}</h3>
+                        <p class="small-text">{{ date('d/m/Y', strtotime($article->updated_at)) }}</p>
                     </div>
+                    <p class="link"><i class="fas fa-link"></i></p>
+                </div>
             </div>
             @endforeach
         </div>

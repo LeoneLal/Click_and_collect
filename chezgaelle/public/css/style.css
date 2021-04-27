@@ -364,3 +364,9 @@ div .show-details p:last-child, div .show-details {
 img.m-auto {
     height: 500px;
 }
+
+/* Articles gallery */
+
+.articles-gallery {
+    padding: 50px;
+}

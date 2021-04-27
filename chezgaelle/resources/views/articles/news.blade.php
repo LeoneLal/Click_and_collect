@@ -17,24 +17,29 @@
         <div class="links">
             <ul>
             <li class="link"><a href="{{ route('index') }}">Accueil</a></li>
-            <li class="link active"><a href="{{ route('gallery.pictures') }}">Galerie</a></li>
-            <li class="link"><a href="{{ route('articles.news') }}">Actus</a></li>
+            <li class="link"><a href="{{ route('gallery.pictures') }}">Galerie</a></li>
+            <li class="link active"><a href="{{ route('articles.news') }}">Actus</a></li>
             <li class="link">Infos complémentaires</li>
             </ul>
         </div>
     </header>
     <main>
-        <div class="pictures">
-            @foreach($pictures as $picture)
-            <div class="picture">
-                <img src="{{ URL::to('/') }}/images/gallery/{{ $picture->picture_slug }}">
-                <div class="">
-                    <p>{{ $picture->description }}</p>
-                    <p class="small-text">{{ date('d/m/Y', strtotime($picture->updated_at)) }}</p>
+        <section class="galerie articles">
+            <div class="lastArticles articles-gallery">
+                @foreach($articles as $article)
+                <div class="article">
+                    <img src="{{ URL::to('/') }}/images/articles/{{ $article->picture_path }}" alt="{{$article->title}}">
+                    <div class="infos">
+                        <div class="details">
+                            <h3 class="title">{{ $article->title }}</h3>
+                            <p class="small-text">{{ date('d/m/Y', strtotime($article->updated_at)) }}</p>
+                        </div>
+                        <p class="link"><i class="fas fa-link"></i></p>
+                    </div>
                 </div>
+                @endforeach
             </div>
-            @endforeach
-        </div>
+        </section>
     </main>   
     <footer>
         <div class="hours">
