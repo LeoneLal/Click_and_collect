@@ -23,7 +23,7 @@
             </ul>
         </div>
     </header>
-    <main>
+    <main class="brown-bg">
         <div class="py-12">
             <div class="max-w-7xl mx-auto">
                 <div class="bg-white overflow-hidden shadow-sm">

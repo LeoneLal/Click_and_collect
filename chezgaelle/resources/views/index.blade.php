@@ -23,7 +23,7 @@
             </ul>
         </div>
     </header>
-    <main>
+    <main class="brown-bg">
     <section class="presentation">
         <div class="img">
         

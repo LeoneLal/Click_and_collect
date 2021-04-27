@@ -23,7 +23,7 @@
             </ul>
         </div>
     </header>
-    <main>
+    <main class="brown-bg">
         <section class="galerie articles">
             <div class="lastArticles articles-gallery">
                 @foreach($articles as $article)

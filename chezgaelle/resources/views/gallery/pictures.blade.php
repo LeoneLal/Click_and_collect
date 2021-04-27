@@ -23,7 +23,7 @@
             </ul>
         </div>
     </header>
-    <main>
+    <main class="brown-bg">
         <div class="pictures">
             @foreach($pictures as $picture)
             <div class="picture">
