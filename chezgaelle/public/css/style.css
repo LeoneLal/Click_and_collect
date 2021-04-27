@@ -211,8 +211,8 @@ header .logo img {
     color: #8c1c13;
 }
 
-.galerie .lastArticles .article .infos .link {
-    margin: 4%;
+p.link {
+    padding-right: 4%;
 }
 
 .galerie button {
