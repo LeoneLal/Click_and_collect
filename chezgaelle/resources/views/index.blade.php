@@ -10,7 +10,9 @@
 <body>
     <header>
         <div class="logo">
+        <a href="{{ route('dashboard') }}">
             <img src="{{asset('images/LogoFondClair.png')}}" alt="logo">
+            </a>
         </div>
         <div class="links">
             <ul>
