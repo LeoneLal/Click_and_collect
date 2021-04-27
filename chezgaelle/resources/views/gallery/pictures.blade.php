@@ -14,8 +14,8 @@
         </div>
         <div class="links">
             <ul>
-            <li class="link active"><a href="{{ route('index') }}">Accueil</a></li>
-            <li class="link"><a href="{{ route('gallery.pictures') }}">Galerie</a></li>
+            <li class="link"><a href="{{ route('index') }}">Accueil</a></li>
+            <li class="link active"><a href="{{ route('gallery.pictures') }}">Galerie</a></li>
             <li class="link">Actus</li>
             <li class="link">Infos complémentaires</li>
             </ul>
