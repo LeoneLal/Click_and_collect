@@ -556,21 +556,24 @@ video {
   justify-content: center;
 }
 
-.logoDiv{
-  display: flex;
-  align-items: center;
-}
-
-.logoDiv .logo{
-  width: 20%;
-  height: auto;
-  padding-top: 10%;
-}
-
-.logo{
+.loginLogo .logo{
   width: 30%;
   height: auto;
 }
+
+.logoDiv{
+  width: 12%;
+  height: fit-content;
+  padding-top: 7px;
+}
+
+/* .logoDiv .logo{
+  width: 20%;
+  height: auto;
+  padding-top: 10%;
+} */
+
+
 
 
       [type='text'],

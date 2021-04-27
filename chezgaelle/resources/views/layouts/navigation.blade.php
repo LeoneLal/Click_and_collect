@@ -78,6 +78,18 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ url('/admin/products') }}">
+                Produits
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ url('/admin/gallery') }}">
+                Photos
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ url('/admin/articles') }}">
+                Articles
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ url('/admin/users') }}">
+                Utilisateurs
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
