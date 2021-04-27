@@ -10,17 +10,13 @@
 <body>
     <header>
         <div class="logo">
-            <img src="{{asset('images/LogoFondClair.png')}}" alt="azertyu">
             <img src="{{asset('images/LogoFondClair.png')}}" alt="logo">
         </div>
         <div class="links">
             <ul>
-            <li class="link active">Accueil</li>
-            <li class="link">Galerie</li>
             <li class="link active"><a href="{{ route('index') }}">Accueil</a></li>
             <li class="link"><a href="{{ route('gallery.pictures') }}">Galerie</a></li>
             <li class="link">Actus</li>
-            <li class="link">Infos Complémentaires</li>
             <li class="link">Infos complémentaires</li>
             </ul>
         </div>
@@ -43,12 +39,10 @@
             @foreach($last_pictures as $picture)
             <div class="picture">
                     <img src="{{ URL::to('/') }}/images/gallery/{{ $picture->picture_slug }}" alt="{{$picture->description}}">
-                    <legend>{{ date('d-m-Y', strtotime($picture->updated_at)) }}</legend>
                     <legend>{{ date('d/m/Y', strtotime($picture->updated_at)) }}</legend>
             </div>
             @endforeach
         </div>
-        <button>VOIR PLUS</button>
         <button><a href="{{ route('gallery.pictures') }}">VOIR PLUS</a></button>
     </section>
     <section class="galerie articles">
@@ -99,8 +93,6 @@
             </div>
         </div>
         <div class="coordonees">
-            <p><i class="fas fa-map-marker-alt"></i> 12 place de l'église 44520 Moisdon la rivière</p>
-            <p><i class="fas fa-phone-alt"></i> 02 40 07 61 74</p>
             <p><i class="fas fa-map-marker-alt"></i>12 Place de l'Église, 44520 Moisdon-la-Rivière</p>
             <p><i class="fas fa-phone-alt"></i>02 40 07 61 74</p>
         </div>
