@@ -64,6 +64,7 @@
             @endforeach
         </div>
         <button>VOIR PLUS</button>
+        <button><a href="{{ route('articles.news') }}">VOIR PLUS</a></button>
     </section>
     </main>   
     <footer>
