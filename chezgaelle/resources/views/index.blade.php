@@ -11,13 +11,17 @@
     <header>
         <div class="logo">
             <img src="{{asset('images/LogoFondClair.png')}}" alt="azertyu">
+            <img src="{{asset('images/LogoFondClair.png')}}" alt="logo">
         </div>
         <div class="links">
             <ul>
             <li class="link active">Accueil</li>
             <li class="link">Galerie</li>
+            <li class="link active"><a href="{{ route('index') }}">Accueil</a></li>
+            <li class="link"><a href="{{ route('gallery.pictures') }}">Galerie</a></li>
             <li class="link">Actus</li>
             <li class="link">Infos Complémentaires</li>
+            <li class="link">Infos complémentaires</li>
             </ul>
         </div>
     </header>
@@ -40,10 +44,12 @@
             <div class="picture">
                     <img src="{{ URL::to('/') }}/images/gallery/{{ $picture->picture_slug }}" alt="{{$picture->description}}">
                     <legend>{{ date('d-m-Y', strtotime($picture->updated_at)) }}</legend>
+                    <legend>{{ date('d/m/Y', strtotime($picture->updated_at)) }}</legend>
             </div>
             @endforeach
         </div>
         <button>VOIR PLUS</button>
+        <button><a href="{{ route('gallery.pictures') }}">VOIR PLUS</a></button>
     </section>
     <section class="galerie articles">
         <h2>Derniers articles</h2>
