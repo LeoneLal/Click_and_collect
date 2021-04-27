@@ -24,8 +24,8 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 @foreach($products as $product)
                 <div class="p-6 bg-white border-b border-gray-200 flex">
-                    <img class="products-list-img mr-9" src="{{ URL::to('/') }}/images/products/{{ $product->picture_slug }}">
-                    <div class="products-detail">
+                    <img class="img-list mr-9" src="{{ URL::to('/') }}/images/products/{{ $product->picture_slug }}">
+                    <div class="details-list">
                         <p>{{ $product->name }}</p>
                         <p class="text-xs">{{ $product->category->name }}</p>
                         <p>{{ $product->price }} €</p>
