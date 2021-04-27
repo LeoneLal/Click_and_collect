@@ -551,6 +551,27 @@ video {
   height: auto;
 }
 
+.loginLogo{
+  display: flex;
+  justify-content: center;
+}
+
+.logoDiv{
+  display: flex;
+  align-items: center;
+}
+
+.logoDiv .logo{
+  width: 20%;
+  height: auto;
+  padding-top: 10%;
+}
+
+.logo{
+  width: 30%;
+  height: auto;
+}
+
 
       [type='text'],
       [type='email'],
