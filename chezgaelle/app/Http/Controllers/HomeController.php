@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Home;
 use App\Models\Gallery;
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -16,8 +17,9 @@ class HomeController extends Controller
     public function index()
     {
         $last_pictures = Gallery::orderBy('id', 'DESC')->limit(3)->get();
+        $last_articles = Article::orderBy('id', 'DESC')->limit(3)->get();
         $description = Home::where( 'key', 'description')->first();
-        return view('index',compact('last_pictures', 'description'));
+        return view('index',compact('last_articles', 'last_pictures', 'description'));
     }
 
     /**

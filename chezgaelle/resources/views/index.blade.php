@@ -50,36 +50,18 @@
     <section class="galerie articles">
         <h2>Derniers articles</h2>
         <div class="lastArticles">
+            @foreach($last_articles as $article)
             <div class="article">
-                    <img src="{{ asset('images/jeux.jpg') }}" alt="Saint Valentin">
+                    <img src="{{ URL::to('/') }}/images/articles/{{ $article->picture_path }}" alt="{{$article->title}}">
                     <div class="infos">
                         <div class="details">
-                            <h3 class="title">Titre de l'article</h3>
-                            <p class="date">12/12/1212</p>
+                            <h3 class="title">{{ $article->title }}</h3>
+                            <p class="small-text">{{ date('d/m/Y', strtotime($article->updated_at)) }}</p>
                         </div>
                         <p class="link"><i class="fas fa-link"></i></p>
                     </div>
             </div>
-            <div class="article">
-                    <img src="{{ asset('images/jeux.jpg') }}" alt="Saint Valentin">
-                    <div class="infos">
-                        <div class="details">
-                            <h3 class="title">Titre de l'article</h3>
-                            <p class="date">12/12/1212</p>
-                        </div>
-                        <p class="link"><i class="fas fa-link"></i></p>
-                    </div>
-            </div>
-            <div class="article">
-                    <img src="{{ asset('images/jeux.jpg') }}" alt="Saint Valentin">
-                    <div class="infos">
-                        <div class="details">
-                            <h3 class="title">Titre de l'article</h3>
-                            <p class="date">12/12/1212</p>
-                        </div>
-                        <p class="link"><i class="fas fa-link"></i></p>
-                    </div>
-            </div>
+            @endforeach
         </div>
         <button>VOIR PLUS</button>
     </section>
