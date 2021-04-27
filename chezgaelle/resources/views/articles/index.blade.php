@@ -24,7 +24,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 @foreach($articles as $article)
                 <div class="p-6 bg-white border-b border-gray-200 flex">
-                    <a href="{{ route('article.show',  $article->id) }}" />
+                    <a href="{{ route('article.show',  $article->id) }}">
                         <img class="img-list mr-9" src="{{ URL::to('/') }}/images/articles/{{ $article->picture_path }}">
                     </a>
                     <div>
