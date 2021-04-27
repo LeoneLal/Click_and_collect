@@ -55,6 +55,11 @@ header .logo img {
     font-weight: bold;
 }
 
+.links ul .link a {
+    text-decoration: none;
+    color: inherit;
+}
+
 /* Présentation Entreprise */
 .presentation {
     background-color: #e7d7c1;
@@ -150,6 +155,11 @@ header .logo img {
     margin-bottom: 25px;
 }
 
+.galerie button a {
+    text-decoration: none;
+    color: inherit;
+}
+
 /* Galerie articles */
 
 .articles {
@@ -237,13 +247,11 @@ footer .hours h1 {
     font-family: "Pacifico", cursive;
     color: #8c1c13;
     margin: 0;
-    padding-right: 2%;
 }
 
 footer .coordonees {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
 

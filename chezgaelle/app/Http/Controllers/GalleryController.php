@@ -101,4 +101,10 @@ class GalleryController extends Controller
         $picture->delete();
         return redirect('/admin/gallery');
     }
+
+    public function pictures()
+    {
+        $pictures = Gallery::all();
+        return view('gallery.pictures')->with('pictures', $pictures);
+    }
 }
