@@ -4,8 +4,8 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                    <a href="{{ route('dashboard') }}">
                 <div class="flex-shrink-0 flex items-center logoDiv">
+                    <a href="{{ route('index') }}">
                         <x-application-logo class="logo"/>
                     </a>
                 </div>
