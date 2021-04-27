@@ -183,9 +183,8 @@ main {
     padding: 10px;
 }
 
-.small-text {
-    font-size: 0.75rem;
-    line-height: 1rem;
+p {
+    margin: 0;
 }
 
 /* Homepage articles */
@@ -416,6 +415,11 @@ img.m-auto {
 .shadow-sm {
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
 }
 
 /* Articles gallery */

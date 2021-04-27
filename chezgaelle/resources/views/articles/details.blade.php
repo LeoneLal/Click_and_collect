@@ -32,8 +32,8 @@
                         <div class="show-details">
                             <p>{{ $article->title }}</p>
                             <div class="flex justify-between">
-                                <p class="small-text">Auteur : {{ $article->author }}</p>
-                                <p class="small-text">Mis à jour le {{ date_format($article->updated_at, "d/m/Y") }}</p>
+                                <p class="text-xs">Auteur : {{ $article->author }}</p>
+                                <p class="text-xs">Mis à jour le {{ date_format($article->updated_at, "d/m/Y") }}</p>
                             </div>
                             <p>{{ $article->body }}</p>
                         </div>
