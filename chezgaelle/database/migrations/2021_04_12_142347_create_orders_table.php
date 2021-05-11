@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->float('total_price');
-            $table->date('pickup_date');
+            $table->dateTime('pickup_date');
             $table->string('order_status');
             $table->timestamps();
         });
