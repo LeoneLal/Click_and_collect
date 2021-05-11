@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\OrderLine;
 
 class OrderLineController extends Controller
 {
@@ -14,7 +15,7 @@ class OrderLineController extends Controller
      */
     public function index()
     {
-        //
+        return Order::all();
     }
 
     /**
@@ -36,7 +37,7 @@ class OrderLineController extends Controller
      */
     public function show($id)
     {
-        //
+        return OrderLine::where('order_id', $id)->get();
     }
 
     /**
