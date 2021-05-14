@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ArticleController;
@@ -72,5 +73,10 @@ Route::post('/articles/create', [ArticleController::class, 'store'])->name('arti
 Route::get('/article/{id}/edit', [ArticleController::class, 'edit'])->name('article.edit');
 Route::post('/article/{id}/edit', [ArticleController::class, 'update'])->name('article.update');
 Route::get('/article/{id}/destroy', [ArticleController::class, 'destroy'])->name('article.destroy');
+
+// Routes for orders
+Route::get('/admin/orders', [OrderController::class, 'index'])->name('orders.index');
+Route::get('/admin/orders/{id}', [OrderController::class, 'show'])->name('orders.show');
+Route::post('/admin/orders/update/{id}/{status}', [OrderController::class, 'update'])->name('orders.update');
 
 require __DIR__.'/auth.php';
