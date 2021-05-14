@@ -16,16 +16,19 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <x-nav-link href="{{ url('/admin/products') }}">
-                        Produits
+                        Products
+                    </x-nav-link>
+                    <x-nav-link href="{{ url('/admin/orders') }}">
+                        Orders
                     </x-nav-link>
                     <x-nav-link href="{{ url('/admin/gallery') }}">
-                        Photos
+                        Pictures
                     </x-nav-link>
                     <x-nav-link href="{{ url('/admin/articles') }}">
                         Articles
                     </x-nav-link>
                     <x-nav-link href="{{ url('/admin/users') }}">
-                        Utilisateurs
+                        Users
                     </x-nav-link>
                 </div>
             </div>
@@ -79,16 +82,19 @@
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ url('/admin/products') }}">
-                Produits
+                Products
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ url('/admin/orders') }}">
+                Orders
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ url('/admin/gallery') }}">
-                Photos
+                Pictures
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ url('/admin/articles') }}">
                 Articles
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ url('/admin/users') }}">
-                Utilisateurs
+                Users
             </x-responsive-nav-link>
         </div>
 
