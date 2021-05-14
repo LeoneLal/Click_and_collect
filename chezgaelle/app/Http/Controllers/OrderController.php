@@ -61,7 +61,13 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $order = OrderLine::where('order_id', $id)->get();
+        
+        if( \Auth::user()->role == 'Administrateur')
+            return view('orders.show')
+            ->with('order', $order);
+        else
+            return redirect()->route('index');
     }
 
     /**
