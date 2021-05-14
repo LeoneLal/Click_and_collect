@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Order;
+use App\Models\OrderLine;
 
 class OrderController extends Controller
 {
@@ -13,7 +15,21 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $validation = Order::where('order_status', "En cours de validation")->get();
+        $preparation = Order::where('order_status', "En cours de préparation")->get();
+        $reception = Order::where('order_status', "Prêt à être réceptionné")->get();
+        $done = Order::where('order_status', "Terminé")->get();
+        $order_date = Order::orderBy('pickup_date')->get();
+
+        if( \Auth::user()->role == 'Administrateur')
+            return view('orders.index')
+            ->with('validation', $validation)
+            ->with('preparation', $preparation)
+            ->with('reception', $reception)
+            ->with('done', $done)
+            ->with('order_date', $order_date);
+        else
+            return redirect()->route('index');
     }
 
     /**
@@ -81,4 +97,4 @@ class OrderController extends Controller
     {
         //
     }
-}
+}  
