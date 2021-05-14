@@ -88,9 +88,33 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id, $status)
     {
-        //
+        $order = Order::where('id', $id)->first();
+        if($status === "En cours de validation") {
+            $order->order_status = "En cours de préparation";
+        } elseif ($status === "En cours de validation") {
+            $order->order_status = "Prêt à être réceptionné";
+        } elseif ($status === "Prêt à être réceptionné") {
+            $order->order_status = "Terminé";
+        }
+        $order->save();
+
+        $validation = Order::where('order_status', "En cours de validation")->get();
+        $preparation = Order::where('order_status', "En cours de préparation")->get();
+        $reception = Order::where('order_status', "Prêt à être réceptionné")->get();
+        $done = Order::where('order_status', "Terminé")->get();
+        $order_date = Order::orderBy('pickup_date')->get();
+
+        if( \Auth::user()->role == 'Administrateur')
+            return view('orders.index')
+            ->with('validation', $validation)
+            ->with('preparation', $preparation)
+            ->with('reception', $reception)
+            ->with('done', $done)
+            ->with('order_date', $order_date);
+        else
+            return redirect()->route('index');
     }
 
     /**
