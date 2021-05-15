@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="orders max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="order-details bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <!-- <h1>Commande n° {{ $order[0]->order_id}}</h1> -->
+                <h1>Commande n° {{ $order[0]->order_id}}</h1>
                     @foreach($order as $line)
                     <div class="order-line p-6 bg-white border-b border-gray-200 flex">
                         <div class="picture-name">
