@@ -8,6 +8,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ChartJsController;
 
 
 /*
@@ -27,12 +28,14 @@ Route::get('/', function () {
 
 Route::get('/',[HomeController::class, 'index'])->name('index');
 
-Route::get('/dashboard', function () {
-    if( \Auth::user()->role == 'Administrateur')
-        return view('dashboard');
-    else
-        return redirect()->route('index');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard',[ChartJsController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
+
+// Route::get('/dashboard', function () {
+//     if( \Auth::user()->role == 'Administrateur')
+//         return view('dashboard');
+//     else
+//         return redirect()->route('index');
+// })->middleware(['auth'])->name('dashboard');
 
 // Routes for product categories
 Route::get('/admin/categories', [CategoryController::class, 'index'])->name('categories.index');
@@ -78,5 +81,8 @@ Route::get('/article/{id}/destroy', [ArticleController::class, 'destroy'])->name
 Route::get('/admin/orders', [OrderController::class, 'index'])->name('orders.index');
 Route::get('/admin/orders/{id}', [OrderController::class, 'show'])->name('orders.show');
 Route::post('/admin/orders/update/{id}/{status}', [OrderController::class, 'update'])->name('orders.update');
+
+
+Route::get('chartjs', [ChartJsController::class, 'index'])->name('chartjs.index');
 
 require __DIR__.'/auth.php';
