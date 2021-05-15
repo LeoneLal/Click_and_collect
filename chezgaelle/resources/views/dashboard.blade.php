@@ -5,27 +5,113 @@
         </h2>
     </x-slot>
 
-    <!-- <div class="py-12">
+    <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{ url('/categories') }}"><button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                        Catégories
-                    </button></a>
-                    <a href="{{ url('/admin/products') }}"><button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                        Produits
-                    </button></a>
-                    <a href="{{ url('/admin/gallery') }}"><button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                        Photos
-                    </button></a>
-                    <a href="{{ url('/admin/articles') }}"><button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                        Articles
-                    </button></a>
-                    <a href="{{ url('/admin/users') }}"><button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                        Utilisateurs
-                    </button></a>
+                <div class=" canvas-div p-6 bg-white border-b border-gray-200">
+                     <canvas id="orderlines"></canvas>
+                     <canvas id="orderedCategories"></canvas>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script>
+    let categories = <?php echo $categories; ?>;
+    let categoriesTab = [];
+
+    for(let i = 0; i< categories.length; i++) {
+        categoriesTab.push(categories[i].name);
+    }
+
+    let orderlines = <?php echo $orderlines; ?>;
+
+    let products = <?php echo $products; ?>;
+    let barChartData = {
+        labels: categoriesTab,
+        datasets: [{
+            label: 'Products',
+            backgroundColor: "brown",
+            data: products
+        }]
+    };
+
+    let orderChartData = {
+        labels: categoriesTab,
+        datasets: [{
+            label: 'Ordered Products',
+            backgroundColor: "brown",
+            data: orderlines
+        }]
+    };
+
+    window.onload = function() {
+        let ctx = document.getElementById("orderlines").getContext("2d");
+        window.myBar = new Chart(ctx, {
+            type: 'bar',
+            data: barChartData,
+            options: {
+                scales: {
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                elements: {
+                    rectangle: {
+                        borderWidth: 2,
+                        borderColor: '#c1c1c1'
+                    }
+                },
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Product categories for sale '
+                }
+            }
+        });
+
+        let orderedCategories = document.getElementById("orderedCategories").getContext("2d");
+        window.myBar = new Chart(orderedCategories, {
+            type: 'bar',
+            data: orderChartData,
+            options: {
+                scales: {
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                elements: {
+                    rectangle: {
+                        borderWidth: 2,
+                        borderColor: '#c1c1c1'
+                    }
+                },
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Categories of ordered products '
+                },
+                {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            fontSize: 40
+                        }
+                    }]
+                    xAxes: [{
+                        ticks: {
+                            fontSize: 40
+                        }
+                    }]
+                }
+            }
+        });
+    };
+</script>
 </x-app-layout>
