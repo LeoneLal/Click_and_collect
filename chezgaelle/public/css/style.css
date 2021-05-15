@@ -348,6 +348,7 @@ i.fa-facebook {
 /* BO list */
 .img-list {
     width: 150px;
+    height: fit-content;
 }
 
 .details-list p, .text-xs {
@@ -504,6 +505,14 @@ img.m-auto {
 
 }
 
+/* ************************DASHBOARD ********************* */
+.canvas-div {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+} 
 
-
-
+canvas {
+    width: 40% !important;
+    height: auto !important;
+}
