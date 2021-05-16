@@ -93,7 +93,7 @@ class OrderController extends Controller
         $order = Order::where('id', $id)->first();
         if($status === "En cours de validation") {
             $order->order_status = "En cours de préparation";
-        } elseif ($status === "En cours de validation") {
+        } elseif ($status === "En cours de préparation") {
             $order->order_status = "Prêt à être réceptionné";
         } elseif ($status === "Prêt à être réceptionné") {
             $order->order_status = "Terminé";
