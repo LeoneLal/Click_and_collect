@@ -27,7 +27,6 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        
         $order = new Order;
         $order->user_id = $request->input('user_id');
         $order->total_price =  $request->input('total_price');
@@ -45,7 +44,7 @@ class OrderController extends Controller
             $orderline->save();  
         }  
         
-        return "Order saved";
+        return json_encode(array('test'=>'ok'));
     
     }
 
