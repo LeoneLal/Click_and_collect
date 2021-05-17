@@ -15,7 +15,7 @@ class OrderLineController extends Controller
      */
     public function index()
     {
-        return Order::all();
+        return OrderLine::all();
     }
 
     /**
