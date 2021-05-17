@@ -6,8 +6,8 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+        <div class="container max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="little-card bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <a href="{{ url('/categories/create') }}">
                         <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
@@ -20,10 +20,10 @@
     </div>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+        <div class=" max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="little-card column-card bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 @foreach($categories as $category)
-                <div class="p-6 bg-white border-b border-gray-200">
+                <div class="center-card p-6 bg-white border-b border-gray-200">
                     <p>{{ $category->name }}</p>
                     
                     <a href="{{ route('category.edit',  $category->id) }}">

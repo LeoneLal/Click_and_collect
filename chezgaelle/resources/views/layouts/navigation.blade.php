@@ -18,6 +18,9 @@
                     <x-nav-link href="{{ url('/admin/products') }}">
                         Products
                     </x-nav-link>
+                    <x-nav-link href="{{ url('/admin/categories') }}">
+                        Categories
+                    </x-nav-link>
                     <x-nav-link href="{{ url('/admin/orders') }}">
                         Orders
                     </x-nav-link>
@@ -83,6 +86,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ url('/admin/products') }}">
                 Products
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ url('/admin/categories') }}">
+                Categories
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ url('/admin/orders') }}">
                 Orders

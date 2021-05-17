@@ -97,19 +97,6 @@
                     display: true,
                     text: 'Categories of ordered products '
                 },
-                {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            fontSize: 40
-                        }
-                    }]
-                    xAxes: [{
-                        ticks: {
-                            fontSize: 40
-                        }
-                    }]
-                }
             }
         });
     };

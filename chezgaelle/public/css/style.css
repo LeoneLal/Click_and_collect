@@ -351,6 +351,10 @@ i.fa-facebook {
     height: fit-content;
 }
 
+.img-list-article{
+    width: 150px;
+}
+
 .details-list p, .text-xs {
     padding-bottom: 10px;
 }
@@ -501,10 +505,12 @@ img.m-auto {
     text-align: center;
     justify-content: center;
     align-items: center;
-
-
 }
 
+.order-by-status .inside-cart .details-list{
+    width: 100%;
+}
+little-card
 /* ************************DASHBOARD ********************* */
 .canvas-div {
     display: flex;
@@ -513,6 +519,38 @@ img.m-auto {
 } 
 
 canvas {
-    width: 40% !important;
+    width: 80% !important;
     height: auto !important;
+    margin: 5%;
+}
+
+
+/* ************************Responsive CRUD ********************* */
+.container {
+    display: flex;
+    justify-content: center;
+}
+.column-card {
+    flex-direction: column;
+}
+
+.center-card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.little-card {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.product-card {
+    width: fit-content;
+}
+
+.products-block {
+    margin: auto;
 }
