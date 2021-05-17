@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\OrderLine;
 
 class OrderController extends Controller
 {
@@ -26,7 +27,26 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $order = new Order;
+        $order->user_id = $request->input('user_id');
+        $order->total_price =  $request->input('total_price');
+        $order->pickup_date = $request->input('pickup_date');
+        $order->order_status = $request->input('order_status');
+        $order->save();
+
+        $lines = $request->input('lines');
+        foreach($lines as $line) {
+            $orderline = new OrderLine;
+            $orderline->order_id = $order->id;
+            $orderline->product_id = $line["product_id"];
+            $orderline->quantity = $line["quantity"];
+            $orderline->price = $line["price"];
+            $orderline->save();  
+        }  
+        
+        return "Order saved";
+    
     }
 
     /**
