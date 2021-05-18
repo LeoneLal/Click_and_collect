@@ -27,8 +27,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/orders/store', [OrderController::class, 'store']);
-
 Route::group([
     'middleware' => 'api',
     'prefix' => 'auth'
@@ -39,4 +37,8 @@ Route::group([
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/refresh', [AuthController::class, 'refresh']);
     Route::get('/user-profile', [AuthController::class, 'userProfile']);    
+});
+
+Route::middleware(['cors'])->group(function () {
+    Route::post('/orders/store', [OrderController::class, 'store']);
 });
