@@ -85,4 +85,8 @@ Route::post('/admin/orders/update/{id}/{status}', [OrderController::class, 'upda
 
 Route::get('chartjs', [ChartJsController::class, 'index'])->name('chartjs.index');
 
+Route::middleware(['cors'])->group(function () {
+    Route::post('/hogehoge', 'Controller@hogehoge');
+});
+
 require __DIR__.'/auth.php';
