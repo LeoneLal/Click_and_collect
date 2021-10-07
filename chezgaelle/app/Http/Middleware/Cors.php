@@ -16,7 +16,13 @@ class Cors
     public function handle($request, Closure $next)
     {
         return $next($request)
+<<<<<<< Updated upstream
             ->header('Access-Control-Allow-Origin', 'localhost')            
             ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+=======
+            ->header('Access-Control-Allow-Origin', 'localhost')
+            ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+
+>>>>>>> Stashed changes
     }
 }
